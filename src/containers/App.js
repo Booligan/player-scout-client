@@ -7,8 +7,6 @@ class App extends Component {
     return (
       <div className="App">
        App Container
-       <hr />
-       <Button bsStyle='success'>CLICK</Button>
       </div>
     );
   }
