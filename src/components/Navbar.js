@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {Navbar as BNav, Nav, NavItem} from 'react-bootstrap';
 
 
@@ -8,15 +8,15 @@ const Navbar = () => {
         <BNav>
             <BNav.Header>
                 <BNav.Brand>
-                    <NavLink to="/" exact >PLAYER SCOUT</NavLink>
+                    <Link to="/" exact >PLAYER SCOUT</Link>
                 </BNav.Brand>
             </BNav.Header>
             <Nav>
                 <NavItem>
-                    <NavLink to="/about" exact >ABOUT</NavLink>                    
+                    <Link to="/about" exact >ABOUT</Link>                    
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/players" exact >PLAYERS</NavLink>
+                    <Link to="/players" exact >PLAYERS</Link>
                 </NavItem>
             </Nav>  
         </BNav>          
