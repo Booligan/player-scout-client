@@ -12,10 +12,10 @@ const Navbar = () => {
                 </BNav.Brand>
             </BNav.Header>
             <Nav>
-                <NavItem href= "#">
+                <NavItem>
                     <NavLink to="/about" exact >ABOUT</NavLink>                    
                 </NavItem>
-                <NavItem href= "#">
+                <NavItem>
                     <NavLink to="/players" exact >PLAYERS</NavLink>
                 </NavItem>
             </Nav>  

@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Navbar from '../components/Navbar'
 import Players from './Players'
+import PlayerShow from './PlayerShow'
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
+    <Router>
+      <div>
           <Navbar />
           <Route exact path = '/players' component = {Players} />
-        </div>
-      </Router>
+          <Route exact path = '/players/:id' component = {PlayerShow} />
+       </div>
+    </Router>
     );
   }
 }

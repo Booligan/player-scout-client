@@ -15,3 +15,12 @@ export const getPlayers = () => {
         .catch(error => console.log(error))
     }
 }
+
+export const getPlayer = (playerID) => {
+    return dispatch => {
+        return fetch(`${API_URL}/players/${playerID}`)
+        .then(response => response.json())
+        .then(players => dispatch(setPlayers(players)))
+        .catch(error => console.log(error))
+    }
+}
