@@ -46,7 +46,7 @@ export const createPlayer = (player, routerHistory) => {
       .then(player => {
         dispatch(addPlayer(player))
         dispatch(resetPlayerForm())
-        routerHistory.replace(`/players/${player.id}`)
+        routerHistory.replace(`/players`)
       })
       .catch(error => {
         dispatch({type: 'ERROR'})
