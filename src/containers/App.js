@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Navbar from '../components/Navbar'
 import Players from './Players'
@@ -12,9 +12,11 @@ class App extends Component {
     <Router>
       <div>
           <Navbar />
-          <Route exact path = '/players' component = {Players} />
-          <Route exact path = '/players/:id' component = {PlayerShow} />
-          <Route exact path = '/players/new' component = {PlayerForm} />          
+          <Switch>
+            <Route exact path = '/players' component = {Players} />
+            <Route exact path = '/players/new' component = {PlayerForm} />
+            <Route exact path = '/players/:id' component = {PlayerShow} />
+          </Switch>          
        </div>
     </Router>
     );

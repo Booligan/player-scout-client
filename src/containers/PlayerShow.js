@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlayerPage from '../components/PlayerPage';
+import { Button } from 'react-bootstrap';
+
 
 
 const PlayerShow = ({player}) => {
         return(
             <div className="PlayerShow">
               <PlayerPage player={player} />
+              <Button bsStyle="danger">Delete {player.first_name} </Button>              
             </div>
         )
 }
