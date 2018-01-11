@@ -1,3 +1,5 @@
+import { resetPlayerForm } from './playerForm';
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const setPlayers = players => {
@@ -15,4 +17,41 @@ export const getPlayers = () => {
         .catch(error => console.log(error))
     }
 }
+
+export const addPlayer = player => {
+    return {
+      type:'CREATE_PLAYER',
+      player
+    }
+  }
+
+export const createPlayer = (player, routerHistory) => {
+    return dispatch => {
+      return fetch(`${API_URL}/players`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({player: player})
+      })
+      .then(handleErrors)
+      .then(response => response.json())
+      .then(player => {
+        dispatch(addPlayer(player))
+        dispatch(resetPlayerForm())
+        routerHistory.replace(`/players/${player.id}`)
+      })
+      .catch(error => {
+        dispatch({type: 'ERROR'})
+        routerHistory.replace(`/players/new`)
+       })
+    }
+  }
+
+  function handleErrors(response){
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
 
