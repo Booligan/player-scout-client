@@ -25,6 +25,13 @@ export const addPlayer = player => {
     }
   }
 
+export const removePlayer = player => {
+  return {
+    type: 'REMOVE_PLAYER',
+    player
+  }
+}
+
 export const createPlayer = (player, routerHistory) => {
     return dispatch => {
       return fetch(`${API_URL}/players`, {
@@ -55,3 +62,15 @@ export const createPlayer = (player, routerHistory) => {
     return response;
   }
 
+  export const deletePlayer = (playerID, routerHistory) => {
+    const request = new Request(`${API_URL}/players/${playerID}`, {
+      method: 'DELETE'
+    });
+    
+    return fetch(request).then(response =>{
+      removePlayer(playerID);
+      routerHistory.replace('/players');
+    }).catch(error =>{
+      return error;
+    });
+  }

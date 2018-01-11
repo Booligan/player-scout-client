@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PlayerPage from '../components/PlayerPage';
 import { Button } from 'react-bootstrap';
+import { deletePlayer } from '../actions/players';
 
 
+class PlayerShow extends Component{
 
-const PlayerShow = ({player}) => {
+    handleOnClick = (event,playerID, history) =>{
+        event.preventDefault();
+        debugger
+        deletePlayer(playerID,history);
+    }
+
+    render(){
+        const { player, history } = this.props;
         return(
             <div className="PlayerShow">
-              <PlayerPage player={player} />
-              <Button bsStyle="danger">Delete {player.first_name} </Button>              
+              <h1>{ player.first_name} { player.last_name}</h1>
+              <Button onClick={(e) => this.handleOnClick(e, player.id, history)} bsStyle="danger">Delete { player.first_name} </Button>              
             </div>
         )
+    }   
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,4 +33,4 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-export default connect(mapStateToProps)(PlayerShow);
+export default connect(mapStateToProps,{deletePlayer})(PlayerShow);
