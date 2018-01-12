@@ -3,7 +3,7 @@ import React from 'react';
 const FormError = () => {
   
   return (
-    <p> All Fields are required </p>
+    <p className="fieldRequired"> Please fill all required fields. </p>
   )
 }
 

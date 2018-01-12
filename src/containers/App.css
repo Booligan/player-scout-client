@@ -2,6 +2,12 @@
   padding: 16px;
 }
 
+.PlayersContainer h1 {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
 .PlayerCard{
   float:left;
   margin: 1.5%;
@@ -68,4 +74,7 @@
 .AboutContainer p{
   color: antiquewhite;
   font-size: 20px;
+}
+.fieldRequired {
+  color: red;
 }
