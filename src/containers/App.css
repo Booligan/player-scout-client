@@ -48,14 +48,14 @@
   margin-top: 5%;
 }
 
-.HomeContainer a{
+.HomeContainer a, .add{
   display: inline-block;
   margin-top: 5%;
   padding: 10px;
   border: solid 3px;
 }
 
-.HomeContainer a:hover{
+.HomeContainer a:hover, .add:hover{
   text-decoration: none;
 }
 
@@ -105,4 +105,8 @@
 .PlayerShow button{
   float: right;
   margin-right: 3%;
+}
+
+form, .formHeader{
+  margin-left: 2%;
 }

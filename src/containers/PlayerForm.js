@@ -26,7 +26,7 @@ class PlayerForm extends Component {
         const { first_name, last_name, born, height, weight, position, nat_team, club_team, img_url} = this.props.playerFormData;
         return(
             <div>
-                <h3>Player Form</h3>
+                <h3 className="formHeader">Player Form</h3>
                 {this.props.errors === true ? <FormError />: null}
                 <hr />
                 <form onSubmit={this.handleOnSubmit}>

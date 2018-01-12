@@ -14,7 +14,7 @@ class Players extends Component{
     render(){
         return(
             <div className="PlayersContainer">
-                <Link to="/players/new" exact >Add a player</Link>
+                <Link to="/players/new" className="add" exact >Add a player</Link>
                 <h1>Players</h1>
                 {this.props.players.map(player => <PlayerCard key={player.id} player={player} />)}
             </div>
