@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { deletePlayer } from '../actions/players';
+import PlayerInfo from '../components/PlayerInfo'
 
 
 class PlayerShow extends Component{
@@ -16,8 +17,8 @@ class PlayerShow extends Component{
         const { player, history } = this.props;
         return(
             <div className="PlayerShow">
-              <h1>{ player.first_name} { player.last_name}</h1>
-              <Button onClick={(e) => this.handleOnClick(e, player.id, history)} bsStyle="danger">Delete { player.first_name} </Button>              
+              <Button onClick={(e) => this.handleOnClick(e, player.id, history)} bsStyle="danger">Delete { player.first_name} </Button>
+              <PlayerInfo player = {player} />              
             </div>
         )
     }   

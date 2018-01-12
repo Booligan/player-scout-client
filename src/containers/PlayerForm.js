@@ -87,7 +87,7 @@ class PlayerForm extends Component {
                                value={club_team} />
                     </div>
                     <div>
-                        <label htmlFor="img_url">Image URL:</label>
+                        <label htmlFor="img_url">Image URL<span className="fieldRequired"> *</span>:</label>
                         <input type='text'
                                onChange={this.handleOnChange}
                                name='img_url'

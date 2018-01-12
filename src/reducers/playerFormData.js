@@ -1,13 +1,13 @@
 const initialState = {
-    first_name: '', 
-    last_name: '', 
+    first_name: null, 
+    last_name: null, 
     born: null, 
     height: 0, 
     weight: 0, 
-    position: '', 
-    nat_team: '', 
-    club_team: '', 
-    img_url: ''
+    position: null, 
+    nat_team: null, 
+    club_team: null, 
+    img_url: null
   }
   
   export default (state = initialState, action) => {
