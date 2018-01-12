@@ -27,3 +27,45 @@
   width: 70%;
   height: 70%;
 }
+
+.HomeContainer{
+  margin-top: 15%;
+  text-align: center;
+}
+
+.HomeContainer h1{
+  font-size: 75px;
+  color: whitesmoke;
+}
+
+.HomeContainer h2{
+  margin-top: 5%;
+}
+
+.HomeContainer a{
+  display: inline-block;
+  margin-top: 5%;
+  padding: 10px;
+  border: solid 3px;
+}
+
+.HomeContainer a:hover{
+  text-decoration: none;
+}
+
+.AboutContainer{ 
+  display: inline-block;
+  margin-left: 33%;
+  margin-right: 33%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 75px;
+  background-color: rgb(2, 2, 46);
+  padding: 50px;
+  padding-top: 20px;
+}
+
+.AboutContainer p{
+  color: antiquewhite;
+  font-size: 20px;
+}
