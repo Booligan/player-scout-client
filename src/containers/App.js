@@ -15,12 +15,12 @@ class App extends Component {
       <div>
           <Navbar />
           <Switch>
-            <Route exact path = '/' component = {Home} />            
+            <Route exact path = '/' component = {Home} />
+            <Route exact path = '/about' component = {About} />              
             <Route exact path = '/players' component = {Players} />
-            <Route exact path = '/about' component = {About} />            
             <Route exact path = '/players/new' component = {PlayerForm} />
             <Route exact path = '/players/:id' component = {PlayerShow} />
-          </Switch>          
+          </Switch>
        </div>
     </Router>
     );
