@@ -9,7 +9,6 @@ class PlayerShow extends Component{
 
     handleOnClick = (event,playerID, history) =>{
         event.preventDefault();
-        debugger
         deletePlayer(playerID,history);
     }
 
@@ -18,10 +17,10 @@ class PlayerShow extends Component{
         return(
             <div className="PlayerShow">
               <Button onClick={(e) => this.handleOnClick(e, player.id, history)} bsStyle="danger">Delete { player.first_name} </Button>
-              <PlayerInfo player = {player} />              
+              <PlayerInfo player = {player} />
             </div>
         )
-    }   
+    }
 }
 
 const mapStateToProps = (state, ownProps) => {

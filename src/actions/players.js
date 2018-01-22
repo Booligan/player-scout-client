@@ -18,13 +18,6 @@ export const getPlayers = () => {
     }
 }
 
-export const addPlayer = player => {
-    return {
-      type:'CREATE_PLAYER',
-      player
-    }
-  }
-
 export const removePlayer = player => {
   return {
     type: 'REMOVE_PLAYER',
@@ -44,7 +37,6 @@ export const createPlayer = (player, routerHistory) => {
       .then(handleErrors)
       .then(response => response.json())
       .then(player => {
-        dispatch(addPlayer(player))
         dispatch(resetPlayerForm())
         routerHistory.replace(`/players`)
       })
@@ -66,7 +58,7 @@ export const createPlayer = (player, routerHistory) => {
     const request = new Request(`${API_URL}/players/${playerID}`, {
       method: 'DELETE'
     });
-    
+
     return fetch(request).then(response =>{
       removePlayer(playerID);
       routerHistory.replace('/players');
