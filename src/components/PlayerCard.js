@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import  Like  from '../components/Like'
+import { likePlayer } from '../actions/players';
 
-export default class PlayerCard extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-          likeCount: 0
-        };
-      }
+
+class PlayerCard extends Component{
 
       upLike = () =>{
-        const count = this.state.likeCount + 1
-        this.setState({likeCount: count})
+        const {player, likePlayer} = this.props
+        const updatedPlayerLikes = Object.assign(...player, {likes: player.likes + 1}) 
+        likePlayer(player.id,updatedPlayerLikes)
       }
+
     render(){
         const {player} = this.props
         return(
@@ -24,10 +23,18 @@ export default class PlayerCard extends Component{
                     <h3>{player.first_name} {player.last_name}</h3>
                     </div>
                 </Link> 
-                <Like likes ={this.state.likeCount} upLike={this.upLike}/>
+                <Like player = {player} upLike = {this.upLike} />
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return({
+        players: state.players
+    })
+}
+
+export default connect(mapStateToProps, {likePlayer} )(PlayerCard);
 
 

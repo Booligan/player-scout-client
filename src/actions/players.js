@@ -25,6 +25,13 @@ export const removePlayer = player => {
   }
 }
 
+export const addLikes = player => {
+  return {
+    type: 'LIKE_PLAYER',
+    player
+  }
+}
+
 export const createPlayer = (player, routerHistory) => {
     return dispatch => {
       return fetch(`${API_URL}/players`, {
@@ -65,4 +72,21 @@ export const createPlayer = (player, routerHistory) => {
     }).catch(error =>{
       return error;
     });
+  }
+
+  export const likePlayer = (playerID, playerLikes) => {
+    return dispatch => {
+      return fetch(`${API_URL}/players/${playerID}`,{
+        method: "PUT",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({player: playerLikes})
+      })
+      .then(response => response.json())
+      .then(player => {
+        dispatch(addLikes(player))
+      })
+      .catch(error => console.log(error))
+    }
   }
