@@ -4,7 +4,7 @@ import moment from 'moment';
 const PlayerInfo = ({player}) =>(
     <div className="PlayerInfo">
         <h1>{player.first_name} {player.last_name}</h1>
-        <img src={player.img_url} className="playerImage" />
+        <img src={player.img_url} className="playerImage" alt={player.last_name} />
         <div className="PlayerData">
             <h3>Born: {moment.utc(player.born).format('MMMM Do YYYY')}</h3>
             <h3>Height: {player.height} inches</h3>
