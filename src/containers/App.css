@@ -122,7 +122,9 @@ form, .formHeader{
 .likeButton{
   margin-left: 75%;
   border-color: rgb(88, 3, 3);
-  padding: 10%;  
+  border-radius: 24px;
+  padding: 14%;
   background-color: red;
-  color: white;  
+  color: white;
+  font-weight: bolder;  
 }
